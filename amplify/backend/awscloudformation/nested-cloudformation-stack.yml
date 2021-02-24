@@ -118,6 +118,21 @@
         }
       }
     },
+    "apinotesapp": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-amplify3b835dcfe2944-staging-81548-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "Parameters": {
+          "CreateAPIKey": 1,
+          "AppSyncApiName": "notesapp",
+          "DynamoDBBillingMode": "PAY_PER_REQUEST",
+          "DynamoDBEnableServerSideEncryption": false,
+          "S3DeploymentBucket": "amplify-amplify3b835dcfe2944-staging-81548-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/8e5ed92bb7313aa7592d1960308cd1d5f10b3309",
+          "env": "staging"
+        }
+      }
+    },
     "UpdateRolesWithIDPFunction": {
       "DependsOn": [
         "AuthRole",
